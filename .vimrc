@@ -46,6 +46,9 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+set relativenumber
+set number
+
 set ai
 set si
 set wrap
