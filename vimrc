@@ -1,3 +1,28 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'prettier/vim-prettier', {'do': 'yarn install', 'branch': 'release/0.x'}
+
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'tpope/vim-fugitive'
+
+Plug 'preservim/nerdtree'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'nathanaelkane/vim-indent-guides'
+
+call plug#end() 
+
+set encoding=UTF-8
 set nocompatible " basically have VIM not act like VI but new
 filetype off " required
 
@@ -8,14 +33,6 @@ set history=700
 
 " Finding Files
 set path+=**
-
-" FILE BROWSING:
-let g:netrw_banner = 0             " disable annoying batnner
-let g:netrw_browse_split = 4       " open in prior window
-let g:netrw_altv = 1               " open splits right
-let g:netrw_liststyle = 3          " tree view
-let g:netrw_list_hide = netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 " Create the `tags` file
 command! MakeTags !ctags -R .
