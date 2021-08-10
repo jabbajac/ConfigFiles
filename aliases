@@ -1,0 +1,21 @@
+# Custom functions
+function glog() {
+	 git log "$@" --pretty='%Cred%h%Creset [%Cgreen%an %Creset %Cblue%ar%Creset]: %Cred%d%Creset %C(yellow)%s%Creset' --graph
+}
+
+# Custom user aliases
+alias ll='ls -lhtr --color=auto'
+alias lla='ls -lahtr --color=auto'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias vi='vim'
+alias gp='git pull'
+alias ga='git add'
+alias gc='git commit'
+alias gs='git status'
+alias resource='source ~/.zshrc'
+alias suu='sudo apt update && sudo apt upgrade -y'
+alias tas='tmux attach-session -t'
+alias tls='tmux list-sessions'
+alias tns='tmux new-session -s'
+alias wk='cd ~/workspace'
